@@ -1,0 +1,901 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{plain}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+%\usepackage{tocloft}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\robustify\cftdotfill
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{soul}
+\usepackage{enumitem}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\usepackage{biblatex}
+% \usepackage{booktabs}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{1.5pt}  % Width of border outside of title bars
+\definecolor{mygrey}{gray}{0.80} % From Todd C. Miller
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
+\newcommand{\resheading}[1]{
+\vspace*{6pt}
+{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}
+%\vspace*{2pt}
+}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r} %original
+%\begin{tabular*}[t]{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r} %[t]
+%\begin{tabularx}{6.5in}{X<{\cftdotfill{\cftsecdotsep}}@{}r} 
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\ressubdoubleheading}[5]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		#3 & \textit{#5} \\
+		\textit{#4} & \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\ressubheadingtop}[5]{
+%\begin{tabular}[t]{l@{\hspace{2in}}r}
+%\begin{tabular}[t]{l@{\extracolsep{\fill}}r}
+\begin{minipage}[t]{\textwidth}
+\vspace*{-2.05em}
+\begin{tabularx}{6.5in}{l R}
+		\textbf{#1} & #2 \\
+		#3 & \textit{#5} \\
+		\textit{#4} & \\
+\end{tabularx}\vspace{-6pt}
+\end{minipage}
+}
+
+%-----------------------------------------------------------
+\begin{document}
+%\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\begin{center}
+\textbf{\Large Eitan Grossman}%\href{eitan.grossman@mail.huji.ac.il}\
+%\phantom{hi} & \phantom{hi}
+\\{Department of Linguistics, Hebrew University of Jerusalem}\\
+{Mount Scopus, Jerusalem 91905, Israel}\\
+{+972-525-3567 (cell)}\hspace{3mm}{+972-2-588-1610 (work)}\\
+eitan.grossman@mail.huji.ac.il\\
+\end{center}
+%Jerusalem, Israel & September 27, 2018 \\
+%\end{tabular*}
+\vspace*{6pt}
+%%%%%%%%%%%%%%%
+\resheading{Research}\pdfbookmark{Research}{sec:research}
+%%%%%%%%%%%%%%%
+\centering
+\begin{minipage}{6.75in}
+	\vspace*{6pt}
+	\vspace*{4pt}
+	\raggedright
+	\textbf {Specialization:} Linguistic typology and historical linguistics\\[4pt]
+	\textbf{Interests:} Language contact, semantic change, grammaticalization, phonology, Coptic-Egyptian	
+\end{minipage}
+\vspace{4pt}
+%%%%%%%%%%%%%%%
+\resheading{Academic appointments} \pdfbookmark{Academic appointments}{sec:appointments}
+%%%%%%%%%%%%%%%
+\begin{itemize}
+\vspace{-0.025 in}
+\vspace*{-2pt}
+\item
+\textbf {{Department of Linguistics, Hebrew University of Jerusalem} }\hfill{Jerusalem}\\
+{Senior Lecturer with tenure}\hfill{2016 -- Present}\\
+{Member of Language, Logic \& Cognition Center}\hfill{2014 -- Present}\\
+{Lecturer}\hfill{2012 -- 2016}\\
+\item \textbf{{Martin Buber Society of Fellows, Hebrew University of Jerusalem}}\hfill{Jerusalem}\\{Postdoctoral fellow}\hfill{2010 -- 2012}\\
+\item \textbf{University of Li\`{e}ge, RAMSES Project}\hfill{Li\`{e}ge}\\{ Postdoctoral researcher}\hfill{2009 -- 2011}\\Host: Jean Winand
+\item \textbf{Ben-Gurion University of the Negev, Kreitman Fellow}\hfill{Beer-Sheva}\\{Postdoctoral fellow}\hfill{2009 -- 2011}\\Host: Roni Henkin
+\end{itemize}
+\vspace{4pt}
+%%%%%%%%%%%%%%%
+\resheading{Short-term appointments at other institutions and other teaching} \pdfbookmark{Short-term appointments}{sec:appointments}
+%%%%%%%%%%%%%%%
+\begin{itemize}
+\vspace{-0.025 in}
+\vspace*{-2pt}
+\item \textbf{Higher School of Economics, School of Linguistics}\hfill{Moscow}\\
+{Instructor, \textit{The distributional typology of borrowed phonological segments}}\hfill{September 2018}\\
+Instructor, \textit{The typology of lexical borrowing}\hfill{September 2017}
+\item \textbf{University of Helsinki, Department of Linguistics}\hfill{Helsinki}\\{Visiting professor, \textit{Targeting language contact for Distributional Typology}}\hfill{September 2017}\\
+\item \textbf{University of Li\`ege}\hfill{Li\`ege}\\{Visiting professor, \textit{The typology of possessive constructions}}\hfill{Spring 2011, 2012}\\
+\item \textbf{{Humboldt University, TOPOI Excellence Cluster}}\hfill{Berlin}\\{Senior visiting researcher}\hfill{October 2011}
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%%
+\resheading{Education} \pdfbookmark{Education}{sec:education}
+%%%%%%%%%%%%%%%
+%\vspace{-0.025 in}
+%texts
+
+\vspace*{2pt}
+\textbf {{Hebrew University of Jerusalem}\hfill{Jerusalem, Israel}}
+\begin{itemize}
+\item {PhD, Linguistics, \textit{summa cum laude}}\hfill{2005 -- 2009}\\
+Dissertation: \textit{Structural studies in the syntax of Early Bohairic Coptic }\\
+Supervisor: Ariel Shisha-Halevy
+\item
+{MA, Linguistics, \textit{summa cum laude}}\hfill{2002 -- 2005}
+\item
+{BA, Linguistics, \textit{summa cum laude}}\hfill{1999 -- 2002}
+\end{itemize}
+%%%%%%%%%%%%%%%
+\resheading{Grants and awards} \pdfbookmark{Grants}{sec:grants}
+\vspace*{6pt}
+\hspace*{-10.5pt}
+%\begin{minipage}{6.9in}
+\vspace*{6pt}
+\begin{enumerate}
+\vspace{-0.025 in}
+\vspace*{-10pt}
+\item {\textit{Transitivity and valency in language contact: the case of Coptic}}\hfill{2017-2021}\\{With Tonio Sebastian Richter (Freie Universit\"at Berlin)}\hfill{\EUR{150,000}}\\{German-Israeli Foundation for Scientific Research and Development Grant I-1343-110.4/2016}
+\item{\textit{The typology of adposition borrowing}}\hfill{2013-2016}\\
+{Israel Science Foundation Grant 248/13}\hfill{345,000 NIS}
+\item {Alon Fellowship for Outstanding Young Researchers}\hfill{2013-2016}
+\item{Swiss National Science Foundation short-term research grant for scientific cooperation}\hfill{2012-2013}\\{With Giorgio Iemmolo}\hfill{\EUR{4500}.}
+ 
+
+\end{enumerate}
+%%%%%%%%%%%%%%%
+\resheading{Graduate students supervised} \pdfbookmark{Supervision}{sec:supervision}
+%\vspace*{4pt}
+\hspace*{-10.5pt}
+%\begin{minipage}{6.9in}
+%\vspace{-0.025 in}
+%\vspace*{-10pt}
+\begin{flushleft}\textbf{MA students}
+\end{flushleft}
+\begin{enumerate}
+\item {Einav Levanon}\hfill{Current}\\
+\textit{Phonological segment borrowing in Papunesia}\\
+
+\item Rammie Cahlon\hfill{2013}\\
+\textit{The habitual periphrasis in Cuzco Quechua}\\
+
+\item Iddo Diamant\hfill{2014}\\
+\textit{The typology of classifiers in verbal constructions}\\ 
+
+\item{Yoram Melzer}\hfill{2014}\\\textit{Lexical innovation in Honduran Spanish}\\ 
+
+\item {Noa Goldblatt (Mandel Scholarship)}\hfill{2015}\\
+\textit{What does \emph{duh} do? A synchronic description of \emph{duh} (‘do’) in Pennsylvania German}
+
+\item {Minjeung Ko}\hfill{2016}\\\textit{Linguistic innovation connected to the honorific affix in Korean}\\Co-supervisor: Anton Antonov (INALCO, Paris)\\	
+
+\item {Nadav Matalon}\hfill{2016}\\\textit{The Camel Humps prosodic pattern in spoken Modern Hebrew}\\Co-supervisor: Michal Marmorstein (HUJI, Linguistics).
+
+\item {Hagay Schurr (Mandel Scholarship)}\hfill{2017}\\\textit{Differential argument coding in Romance: Towards a revised typology}\\
+Currently in PhD program in Linguistics at City University of New York.	
+\item {Maya Inbar (Mandel Scholarship)}\hfill{2017}\\\textit{The temporal structure of intonation units}\\Co-supervisor: Ayelet Landau (HUJI, Psychology \& Cognitive Sciences).	
+
+\item {Noam Tomer}\hfill{2017}\\{\textit{Language Contact:  Dutch influences on the syntax of periphrastic verb structures in Dutch Yiddish}}\\ Co-supervisor: Moshe Taube (HUJI, Linguistics). 
+\end{enumerate}
+\begin{flushleft}\textbf{PhD students}
+\end{flushleft}
+\begin{enumerate}
+\item {Haim Dubossarsky (Edmond and Lily Safra Center for Brain Sciences)}\hfill{2018}\\
+\textit{Computational studies of semantic change of words in historical corpora} .\\ 
+Co-supervisor: Daphna Weinshall (HUJI, Computer Science).\\Currently post-doctoral researcher at Cambridge University.
+\item Rammie Cahlon (President`s Scholarship)\hfill{Current}\\
+\textit{An areal typology of Quechuan languages.}\\{Joint PhD program with Leiden University}\\ Co-supervisor: Willem Adelaar (Leiden University).
+\item Elena Luchina (President`s Scholarship)\hfill{Current}\\\textit{Variation in Yiddish zikh-verbs in areal perspective.}\\Co-supervisor: Moshe Taube (Linguistics, HUJI)
+\item Noa Goldblatt (President`s Scholarship)\hfill{Current}\\\textit{A micro-typology of discourse markers borrowing in German speech islands }\\Co-supervisor: Hans Boas (University of Texas, Austin)
+\item {Shira Tal}\hfill{Current}\\\textit{The role of redundant marking in learning}\\Co-supervisor: Inbal Arnon (HUJI, Psychology \& Cognitive Science)
+\item {Maya Inbar (President`s Scholarship)}\hfill{Current}\\Title undecided.\\Co-supervisor: Ayelet Landau (HUJI, Psychology \& Cognitive Science)
+\end{enumerate}
+
+\begin{flushleft}\textbf{Member of the PhD committee (non-supervisor)}
+\begin{enumerate}
+\item Gili Diamant (Linguistics)
+\item Assaf Bar-Moshe (Linguistics)
+\item Ori Lavi-Rotbain (Cognitive Sciences)
+\item Marina Shama (Egyptology)
+\item Haleli Harel (Egyptology)
+
+\end{enumerate}
+\end{flushleft}
+
+\begin{flushleft}\textbf{Postdoctoral researchers and other visiting scholars}
+\end{flushleft}
+\begin{enumerate}
+\item {Giorgio Iemmolo, University of Zurich, General \& Comparative Linguistics}\hfill{2012 -- 2013}\\ 
+\item {Malte Rosemeyer, University of Freiburg, Department of Romance Philology}\hfill{2014}\\
+\item {Ilja Ser\v{z}ant, University of Konstanz, Zukunftskolleg}\hfill{2014}\\
+\item {Dalibor Holan, visiting PhD student, Masaryk University}\hfill{2014 -- 2015}\\
+\item{Ezequiel Koile, Universidad Nacional de la Plata, Argentina }\hfill{2015 -- 2016}
+\item {Pavel Ozerov, La Trobe University}\hfill{2015 -- 2016}
+\item {Anna Berge, Visiting professor, University of Alaska (Fairbanks)}\hfill{2016 -- 2017}\\
+\item {Dmitry Nikolaev, Russian State University for the Humanities}\hfill{2016 -- present}
+\item {Alexander Letuchiy, Russian Academy of Sciences}\hfill{2018}
+\end{enumerate}	
+
+\begin{flushleft} \textbf{Affiliated Martin Buber Society postdoctoral researchers}
+\end{flushleft}
+\begin{enumerate}
+    \item {Pavel Ozerov}\hfill{2016 -- present}
+    \item {Linda Konnerth}\hfill{2016 -- present} 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%
+\resheading{Service and other activities at the Hebrew University} \pdfbookmark{Education}{sec:education}
+%%%%%%%%%%%%%%%
+%\begin{flushleft}\textbf{Department of Linguistics}
+%\end{flushleft}
+
+\begin{itemize}
+\vspace{-0.025 in}
+\vspace*{-2pt}
+\item {Head of the Functional Linguistics track, Department of 				Linguistics}\hfill{2015 -- 2018} 
+\item
+{BA Advisor, Department of Linguistics}\hfill{2012 -- 2018}
+\item
+{MA Advisor, Department of Linguistics}\hfill{2018 -- present, 2012 -- 2016}
+\item
+{Library acquisition liaison, Department of Linguistics}\hfill{2012 -- 2018}
+\item {Departmental seminar co-coordinator, Department of Linguistics}\hfill{2018 -- present, 2012 -- 2017}
+\item {Student-teacher committee, Department of Linguistics}\hfill{2012 -- 2016}
+\item Martin Buber Society of Fellows in the Humanities and Social Sciences\hfill{2014 -- 2017}\\Academic consultant 
+\item Forum for New Faculty\hfill{2014 -- 2017}\\Co-coordinator (with Elisheva Baumgarten).
+\item Faculty PhD committee (Language Sciences)\hfill{2014 -- present}
+\item Yad Hanadiv-funded program for curriculum development in the language sciences\hfill{2015 -- present}\\Steering committee
+\item Estabished and coordinated the Speech Prosody Reading Group (LLCC)\hfill{2016 -- 2017}\\
+\item Established the Dynamics of Language Lab\hfill{2016 -- present}
+\item Scholion research group {`Historical linguistics and formal semantics`}\hfill{2017 -- present}
+\item Development Committee of the Faculty of the 				Humanities\hfill{2017 -- present}
+\item Hebrew University Research Authority Plenary Committeee\hfill{2018 -- present}
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%%
+\resheading{Service and other activities outside the Hebrew University} \pdfbookmark{Service}{sec:service}
+%%%%%%%%%%%%%%%
+\begin{itemize}
+\vspace{-0.025 in}
+\vspace*{-2pt}
+\item Israel Academy of Sciences and Humanities group `Functionalist linguistics, linguistic typology, and language acquisition`\hfill{2014 -- 2016}\\
+Group member and member of steering committee\\
+
+\item \textit{Handbooks of Ancient Egyptian} (de Gruyter Mouton)\hfill{2010 -- present}\\Series founder and editor 
+
+\item \textit{Database and Dictionary of Greek Loanwords in Coptic} (DFG-funded)\hfill{2012 -- present}\\Advisory committee member
+
+\item \textit{Language Science Press}\hfill{2015 -- present}\\Copyeditor
+
+\item \textit{Coptic Scriptorium} project (NEH-funded)\hfill{2014-present}\\Scientific committee member		
+
+\item \textit{Association for Linguistic Typology}\hfill{2015-2016}	\\Abstract-reading committee
+
+\item \textit{Societas Linguistica Europaea}\\Abstract-reading committee\hfill{2015 -- present}\\Elected to Scientific Committee \hfill{2017 -- present}
+
+\item \textit{Linguistics Vanguard}\hfill{2016 -- present}\\Area editor for language change, language typology, and language contact
+\item \textit{Journal of Historical Linguistics}\hfill{2017 -- present}\\Associate editor
+\item {\textit{Lingua Aegyptia - Journal of Egyptian Language Studies}\hfill{2017 -- present}\\Editorial board}
+
+\item Ad hoc reviewing for \textit{Linguistics, Journal of Historical Linguistics, Frontiers in Psychology, Studies in Language, Journal of South Asian Languages and Linguistics, Linguistic Variation}, Israel Association for Theoretical Linguistics Conference, Usage-Based Linguistics Conference, Netherlands Organization for Scientific Research.
+ 
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%%
+\resheading{Publications} \pdfbookmark{Publications}{sec:publications}
+%%%%%%%%%%%%%%%
+\vspace*{6pt}
+\hspace*{-10.5pt}
+%\begin{minipage}{6.9in}
+\vspace*{6pt}
+%%%%%%%%%%%%%%%
+\resheading{Books and special issues edited}\pdfbookmark{Publications}{sec:Books and special issues}
+%%%%%%%%%%%%%%%
+\begin{enumerate}
+%\vspace{-0.025 in}
+%\vspace*{-10pt}
+%\item {Eitan Grossman, Alena Witzlach-Makarevich \& Ilja Ser\v{z}ant.} {To appear.} \textit{Valency and transitivity in contact.} {Special issue of \textit{Journal of Language Contact.}}
+
+%\item {Yael Reshef \& Eitan Grossman (eds.)} Introduction and background in Ruth Berman (ed.) Modern Hebrew. Amsterdam: John Benjamins.
+
+\item {Eitan Grossman \& St\'ephane Polis.} {To appear.} \textit{Possession in Ancient Egyptian} (=Mouton Companions to Ancient Egyptian 2). Berlin \& New York: De Gruyter Mouton.
+
+\item {Cromwell, Jennifer \& Eitan Grossman (eds.).} {2018.} \textit{Beyond Free Variation: Scribal Repertoires from Old Kingdom to Early Islamic Egypt.} Oxford: Oxford University Press. 
+
+\item {Grossman, Eitan, Peter Dils, Tonio Sebastian Richter \& Wolfgang Schenkel (eds.).} {2017.} \textit{Greek Influence on Egyptian-Coptic. Language Contact in an Ancient African Language.} Hamburg: Widmaier Verlag.
+
+\item {Grossman, Eitan, Martin Haspelmath \& Tonio Sebastian Richter (eds.).} {2014.} \textit{Egyptian-Coptic Linguistics in Typological Perspective} (=Empirical Approaches to Language Typology 55).  Berlin \& New York: De Gruyter Mouton.\\
+\footnotesize{Reviewed by Roman Gundacker (2016) in \textit{Lingua Aegyptia} 24: 161-172.}
+\normalsize
+\item {Grossman, Eitan, St\'ephane Polis, Andr\'eas Stauder \& Jean Winand (eds.).} {2014.} \textit{Forms and Functions: Studies in Ancient Egyptian-Coptic Grammar} (=Lingua Aegyptia Studia Monographica 15). Hamburg: Widmaier Verlag.\\
+\footnotesize{Reviewed by Carsten Peust (2015) in \textit{Lingua Aegyptia} 23: 339-353.}
+\normalsize
+\item {Grossman, Eitan, St\'ephane Polis, \& Jean Winand (eds.).} {2012.} \textit{Lexical Semantics in Ancient Egyptian} (=Lingua Aegyptia Studia Monographica 9). Hamburg: Kai Widmaier Verlag.\\
+\footnotesize{{Reviewed by Leo Depuydt (2016) in \textit{Journal of the American Oriental Society} 136(1): 204-206; by Dimitri Meeks (2015) \textit{Chronique d`\'Egypte} 90(179): 40–67; by Ines K\"ohler (2015) in \textit{Lingua Aegyptia} 23: 323-330; and by Anke Ilona Bl\"obaum (2014) in \textit{Bibliotheca Orientalis} 71(5/6): 731-738}} 
+\normalsize
+
+\end{enumerate}
+%\end{minipage}
+\resheading{Articles in peer-reviewed journals and conference proceedings}
+\begin{enumerate}[resume]
+%\vspace{-0.025 in}
+%\vspace*{-10pt}
+
+%item\ {Eitan Grossman \& Alena Witzlack-Makarevich. Forthcoming. Valency and transitivity in contact: an overview. \textit{Journal of Language Contact}. Ca. 20 pages.
+
+%\item {Thanasis Georgakopoulos, St\'ephane Polis, Dmitry Nikolaev \& Eitan Grossman}. Submitted. Universal and areal patterns in the lexicon: a case-study in the perception-cognition domain. Submitted to \textit{Linguistic Typology}.
+
+%\item {Eitan Grossman \& Dmitry Nikolaev}. Submitted. Eurasian areal signals in causal alternations. Submitted to \textit{Language Dynamics and Change}.
+
+\item {Eitan Grossman.} {Forthcoming.} Language-specific transitivities in contact: the case of Coptic. \textit{Journal of Language Contact}. Ca. 25 pages.
+
+\item {Eitan Grossman.} {Forthcoming.} For the sake of an argument. Grammatical relations and argument selectors in Baltic. \textit{Baltic Linguistics.} Review article of Axel Holvoet \& Nicole Nau (eds.). \textit{Argument realization in Baltic.} (=Valency, Argument Realization and Grammatical Relations in Baltic 3). Amsterdam: John Benjamins. Ca. 30 pages.
+
+\item {Grossman, Eitan.} {2018.} Did Greek influence the Coptic prefixing preference? \textit{Journal of Language Contact} 11(1): 1-31.
+
+\item {Dmitry Nikolaev \& Eitan Grossman.} {2018.} Areal sound change and the distributional typology of affricate richness in Eurasia. \textit{Studies in Language} 42(3):562-599.
+
+\item {Grossman, Eitan, Guillaume Jacques \& Anton Antonov.} {2018.} A cross-linguistic rarity in synchrony and diachrony: adverbial subordinator prefixes exist. \textit{STUF -- Language Typology and Universals} 71(4). Ca. 30 pages.
+
+\item {Grossman, Eitan \& St\'ephane Polis.} 2018. Swimming against the typological tide or paddling along with language change? Dispreferred structures and diachronic biases in affix ordering. \textit{Journal of Historical Linguistics} 9(3). Ca. 50 pages.
+
+\item {Haim Dubossarsky, Daphna Weinshall \& Eitan Grossman.} {2018.} Coming to your senses: on controls and evaluation sets in polysemy research. \textit{Proceedings of the Conference on Empirical Methods in Natural Language Processing 2018.}
+
+\item	{Malte Rosemeyer \& Eitan Grossman.} {2017.} The road to auxiliariness revisited: the grammaticalization of \textsc{finish} anteriors in Spanish. \textit{Diachronica} 34(3): 516-558.
+
+\item {Haim Dubossarsky, Daphna Weinshall \& Eitan Grossman.} {2017.} Outta control: Laws of Semantic Change and Inherent Biases in Word Representation Models. \textit{Proceedings of the Conference on Empirical Methods in Natural Language Processing 2017}, 1147 -- 1156.
+
+\item {Haim Dubossarsky, Daphna Weinshall  \& Eitan Grossman.} {2016.} Verbs change more than nouns: a bottom-up computational approach to semantic change. \textit{Linge e Lingguagio} 2016(1): 7-28.
+
+\item {Grossman, Eitan.} {2016.} From rarum to rarissimum: an unexpected zero person marker. \textit{Linguistic Typology} 20(1): 1-23.
+
+\item {Grossman, Eitan \& Ira Noveck.} {2015.} What can historical linguistics and experimental pragmatics offer each other? \textit{Linguistics Vanguard} 1 (1): 145-152. (Most downloaded article of the journal to date)
+
+\item {Haim Dubossarsky, Yulia Tvetkov, Chris Dyer \& Eitan Grossman.} {2015.} A bottom-up approach to category mapping and meaning change. In: Vito Pirrelli, Claudia Marzi, \& Marcello Ferro (eds.): \textit{Word Structure and Word Usage. Proceedings of the NetWordS Final Conference, Pisa, March 30-April 1, 2015}, 66-70.
+
+\item {Grossman, Eitan \& St\'ephane Polis.} {2014.} On the pragmatics of subjectification: the emergence and modalization of an Allative Future in Ancient Egyptian. \textit{Acta Linguistica Hafniensia} 46(1): 25-63. 
+
+\item {Cromwell, Jennifer  \& Eitan Grossman.} {2010.} Condition(al)s of Repayment: P. CLT 10 Reconsidered. \textit{Journal of Egyptian Archaeology} 96: 149-160.
+
+\item {Grossman, Eitan.} {2009.} Periphrastic Perfects in the Coptic Dialects: A Case Study in Grammaticalization. \textit{Lingua Aegyptia} 17: 81-118.
+
+\item {Grossman, Eitan.} {2009.} The Syntax of Argument Clauses in Sahidic Coptic. \textit{Zeitschrift f\"ur \"agyptische Sprache und Altertumskunde} 136(1): 19-32.
+
+\item {Grossman, Eitan.} {2008.} Nucleus-Satellite Analysis and Conjugation Mediation in Coptic and Later Egyptian. \textit{Zeitschrift f\"ur \"agyptische Sprache und Altertumskunde} 135(2): 16-29. 
+
+\item {Grossman, Eitan.} {2007.} Protatic iir=f sdm in the Report of Wenamun: A Proto-Demotic Feature?’ \textit{G\"ottinger Miszellen} 215: 49-56. 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%
+%\resheading{Other Papers}
+\resheading{Peer-reviewed articles in edited volumes} \pdfbookmark{Peer-reviewed articles in edited volumes}{sec:articles}
+\vspace*{6pt}
+\hspace*{-10.5pt}
+%\begin{minipage}{6.9in}
+\vspace*{6pt}
+\begin{enumerate}[resume]
+%\vspace{-0.025 in}
+%\vspace*{-10pt}
+%\item Yael Reshef \& Eitan Grossman. Forthcoming. Modern Hebrew. An Overview. In: Ruth Berman (ed.) \textit{Modern Hebrew.} Amsterdam: John Benjamins. 
+
+%\item Eitan Grossman \& Stav Klein. Modern Hebrew phonology. An overview. In: Ruth Berman (ed.) \textit{Modern Hebrew.} Amsterdam: John Benjamins. 
+
+\item	Karsten Schmidtke-Bode \& Eitan Grossman. Forthcoming. Diachronic sources, functional motivations and the nature of the evidence: A synthesis. In: Karsten Schmidtke-Bode, Natalia Levshina, Susanne Maria Michaelis \& Ilja A. Ser\v{z}ant (eds) \textit{Explanation in linguistic typology: Diachronic sources, functional motivations and the nature of the evidence.} [Conceptual Foundations of Language Science.] Berlin: Language Science Press. Ca. 18 pages.
+
+\item Eitan Grossman \& St\'ephane Polis. Forthcoming. Four thousand years of prohibitive constructions and prohibitive cycles in Egyptian-Coptic. Accepted to: Elsa Or\'eal \& Jean Winand (eds.) \textit{Negation in Ancient Egyptian.} Berlin \& New York: De Gruyter Mouton. Ca. 40 pages.
+
+\item Eitan Grossman. Forthcoming. Focalized possession in the Coptic dialects. In: Eitan Grossman \& St\'ephane Polis (eds.). \textit{Possession in Ancient Egyptian.} Berlin \& New York: De Gruyter Mouton.  Ca. 35 pages.
+
+\item	Eitan Grossman \& St\'ephane Polis. Forthcoming. Adnominal possessive constructions with pronominal possessors in Late Egyptian. In: Eitan Grossman \& St\'ephane Polis (eds.). \textit{Possession in Ancient Egyptian.} Berlin \& New York: De Gruyter Mouton. Ca. 25.
+
+\item Noam Faust \& Eitan Grossman. Forthcoming. Nuer (Western Nilotic). In: Zelealem Leyew, Ronny Meyer, Yvonne Treis \& Bedilu Wakjira (eds.), \textit{Oxford Handbood of Ethiopian Languages.} Ca. 25 pages.
+
+\item	Eitan Grossman. 2018. From suffix to prefix to interposition via Differential Object Marking. In: Ilja Ser\v{z}ant \& Alena Witzlach-Makarevich (eds.) \textit{Diachronic Typology of Differential Argument Markin}g, 129-151. Berlin: Language Sciences Press.
+
+\item Jennifer Cromwell \& Eitan Grossman. 2018. Scribes, repertoires, and variation. In: Jennifer Cromwell \& Eitan Grossman (eds.), \textit{Scribal repertoires in Egypt from the Old Kingdom to the Early Islamic Period}, 1-16. Oxford: Oxford University Press.
+
+\item Eitan Grossman \& Alain Delattre. 2018. A new Early Bohairic text. In: Rosario Pintaudi, (ed.) \textit{Antinoupolis 2}, 635-646. Florence: Instituto Papyrologico G. Vitelli.
+
+\item	Grossman, Eitan \& Tonio Sebastian Richter. 2017. Dialectal variation and language change: the case of Greek loan-verb integration strategies in Coptic. In: Eitan Grossman, Peter Dils, Tonio Sebastian Richter \& Wolfgang Schenkel (eds.). \textit{Greek Influence on Egyptian-Coptic. Language Contact in an Ancient African Language}, 207-236. Hamburg: Widmaier Verlag.
+
+\item	Grossman, Eitan \& St\'ephane Polis. 2017. Polysemy networks in language contact: the borrowing of the Greek-origin preposition \textit{kata} in Coptic In: Eitan Grossman, Peter Dils, Tonio Sebastian Richter \& Wolfgang Schenkel (eds.). \textit{Greek Influence on Egyptian-Coptic. Language Contact in an Ancient African Language}, 335-367. Hamburg: Widmaier Verlag.
+
+\item Grossman, Eitan. 2014. A late Fayyumic letter. In: Anne Boud’hors \& Catherine Louis (eds.) \textit{Coptica Argentoratensia. Conférences et documents de la 3e université d'été en papyrologie copte (Strasbourg, 18-25 juillet 2010)},  193-198.
+
+\item Grossman, Eitan, Guillaume Lescuyer \& St\'ephane Polis. 2014. Contexts and inferences: the grammaticalization of the Later Egyptian Allative Future. In: Eitan Grossman, St\'ephane Polis, Andr\'eas Stauder \& Jean Winand (eds), \textit{Forms and Functions: Studies in Ancient Egyptian-Coptic Grammar}, 87-136. Hamburg: Kai Widmaier Verlag. 
+
+\item	Grossman, Eitan \& St\'ephane Polis. 2014. Forms and functions in Ancient Egyptian: a short introduction. In: Eitan Grossman, St\'ephane Polis, Andréas Stauder \& Jean Winand (eds), \textit{Forms and Functions: Studies in Ancient Egyptian-Coptic Grammar}, 1-6. Hamburg: Kai Widmaier Verlag. 
+
+\item	Grossman, Eitan \& Martin Haspelmath. 2014. On the transliteration of Coptic. In: Eitan Grossman, Martin Haspelmath \& Tonio Sebastian Richter (eds.), \textit{Egyptian-Coptic Linguistics in Typological Perspective}, 145-153. Berlin \& New York. De Gruyter Mouton. 
+
+\item	Grossman, Eitan \& Tonio Sebastian Richter. 2014. The Egyptian-Coptic language: its setting in space, time and culture. In: Eitan Grossman, Martin Haspelmath \& Tonio Sebastian Richter (eds.), \textit{Egyptian-Coptic Linguistics in Typological Perspective}, 69-101. Berlin \& New York. De Gruyter Mouton. 
+
+\item	Grossman, Eitan. 2014. No case before the verb in Coptic. In: Eitan Grossman, Martin Haspelmath \& Tonio Sebastian Richter (eds.), \textit{Egyptian-Coptic Linguistics in Typological Perspective}, 203-225. Berlin \& New York. De Gruyter Mouton.
+
+\item Grossman, Eitan. 2013. Greek Loanwords in Coptic. In: Georgios K. Giannakis (ed.),\textit{Encyclopedia of Ancient Greek Language and Linguistics}. Brill Online. Available at http://dx.doi.org/10.1163/
+2214-448X\_eagll\_SIM\_00000469. 
+
+\item	Grossman, Eitan. 2013. “So you just flow with it”: the inclusive second person as a discursive strategy in “soldiers” testimonies. In: David Shulman (ed.), \textit{Meditations on Authority}, 157-191. Jerusalem: Magnes University Press. 
+
+\item Grossman, Eitan \& St\'ephane Polis. 2012. Lexical semantics in Ancient Egyptian: an introduction. In: Eitan Grossman, St\'ephane Polis, \& Jean Winand (eds.) \textit{Lexical Semantics in Ancient Egyptian} (=Lingua Aegyptia Studia Monographica 9), 1-15. Hamburg: Kai Widmaier Verlag.\\
+
+
+\item Grossman, Eitan \& St\'ephane Polis. 2012. Navigating polyfunctionality in the lexicon: Semantic maps and Ancient Egyptian lexical semantics. In: Eitan Grossman, St\'ephane Polis, \& Jean Winand (eds.),\textit{Lexical Semantics in Ancient Egyptian} (= Lingua Aegyptia Studia Monographica 9), 175-225. Hamburg: Kai Widmaier Verlag. 
+
+\item Grossman, Eitan. 2009. Protatic \textit{efs\^otm} revisited. In: Anna Giewekemeyer, Gerard Moers \& Kai Widmaier (eds.), \textit {Liber amicorum - J\"urgen Horn zum Dank}, G\"ottingen: G\"ottinger Miszellen Beihefte 5: 47-56. 
+
+\item Grossman, Eitan. 2007. Worknotes on Nitrian Bohairic syntax: a hitherto unnoticed circumstantial conversion? In: Anne Boud’hors \& Nathalie Bosson (eds.), \textit{Proceedings of the 8th International Congress of Coptic Studies, Paris 2004, vol. 2}, 711-726. Leuven: Peeters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+%\end{minipage}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+%\resheading{Other Papers}
+\resheading{Other publications} \pdfbookmark{Manuscripts \& Other Papers}{sec:manuscripts}
+%%%%%%%%%%%%%%%
+\begin{enumerate}[resume]
+\vspace{-0.025 in}
+\vspace*{-8pt}
+\item Grossman, Eitan. 2015. A proposal for the glossing of bound formatives without committing to their nature. \textit{Diversity Linguistics Comment.} http://dlc.hypotheses.org/843.
+
+\item Grossman, Eitan. 2013. On the costs of ignoring language change. \textit{Diversity Linguistics Comment}. http://dlc.hypotheses.org/371.
+
+\item Grossman, Eitan. 2013. On double accusative marking. \textit{Diversity Linguistics Comment.} http://dlc.hypotheses.org/446.
+
+\item Grossman, Eitan. 2011. Review of Bohumil Vykypěl, \textit{Empirical functionalism and the Prague School} (= Travaux linguistiques de Brno 6.) Munich: LINCOM Europa, 2009. In \textit{Language} short reviews.
+
+\item Grossman, Eitan. 2011. Review of Dirk Geeraerts, \textit{Theories of lexical semantics.} Oxford: Oxford University Press, 2010. In \textit{Language} short reviews.
+
+\item Grossman, Eitan. 2011. Review of Kasper Boye and Elisabeth Engberg-Pedersen (eds.), \textit{Language usage and language structure} (Trends in linguistics. Studies and monographs 213.) Berlin: Mouton de Gruyter, 2010. In \textit{Language} short reviews.
+
+\item Grossman, Eitan. 2007. Review of Malcolm Choat, \textit{Belief and Cult in the Fourth Century Papyri} in \textit{Scripta Classica Israelica} 26: 248-252.
+
+\item Grossman, Eitan. 2007. Review of Sofia Torallas-Tovar, \textit{Identidad lingüíistica e identidad religiosa en el Egipto grecorromano} in \textit{Scripta Classica Israelica} 26: 246-248.
+\end{enumerate}
+
+
+\newpage
+%%%%%%%%%%%%%%%
+\resheading{Presentations (Refereed by Abstract)} \pdfbookmark{Presentations (Refereed by Abstract)}{sec:presentations1}
+%%%%%%%%%%%%%%%
+\begin{enumerate}
+\vspace{-0.025 in}
+\vspace*{-4pt}
+\item \textbf{Coming to your senses: on controls and evaluation sets in polysemy research}\\\textit{Conference on Empirical Methods in Natural Language Processing}\hfill{Brussels, 3 November 2018}\\With Haim Dubossarsky (Cambridge) and Daphna Weinshall (HUJI).
+%3 November 2018
+%http://emnlp2018.org/program/accepted/long-papers
+
+\item \textbf{Towards a distributional typology basic valence orientation in Eurasia}\\\textit{{Societas Linguistica Europaea}} 51 \hfill{Tallinn, 31 August 2018}\\With Dmitry Nikolaev (HUJI).
+%31 August 2018
+%http://sle2018.eu/programme
+
+\item \textbf{Phonological microareality in Greater Kurdistan}\\{\textit{Societas Linguistica Europaea}} 51\hfill{Tallinn, 29 August 2018}\\With Dmitry Nikolaev (HUJI).
+%29 August 2018
+%http://sle2018.eu/programme
+
+\item \textbf{Weighted lexical semantic
+maps for areal lexical typology. Verbs of perception and cognition as a case study.}\\\textit{Association for Linguistic Typology} 12\hfill{Canberra, 14 December 2017}\\
+With Athanasis Georgakopoulos, St\'ephane Polis, \& Dmitry Nikolaev.
+
+\item \textbf{Outta Control: Laws of Semantic Change and Inherent Biases in Word Representation Models}\hfill{Copenhagen, 10 September 2017}\\{\textit{Conference on Empirical Methods in Natural Language Processing}}\\With Haim Dubossarsky (HUJI) and Daphna Weinshall (HUJI).
+%10 September 2017
+%http://emnlp2017.net/index.html
+
+\item \textbf{Towards a distributional typology of sound change in Eurasia: directionality and areality of sound changes in the IE family}\\{\textit{Societas Linguistica Europaea }} 50\hfill{Z\"urich, 10 September 2017}\\With Dmitry Nikolaev (HUJI).
+%10 September 2017 
+%http://www.sle2017.eu/programme
+
+\item \textbf{Overall borrowing and borrowing in basic vocabulary: a typological perspective on lexical change in Ancient Egyptian-Coptic}\\{\textit{Societas Linguistica Europaea }} 50\hfill{Z\"urich, 11 September 2017}\\With St\'{e}phane Polis (Li\`{e}ge).
+%11 September 2017
+%http://www.sle2017.eu/programme
+
+\item \textbf{The road to auxiliariness revisited}\\
+{\textit{International Conference of Historical Linguistics }} 23\hfill{San Antonio, 4 August 2017}\\With Malte Rosemeyer (KU Leuven).
+%4 August 2017
+%http://ichl23.utsa.edu/wp-content/uploads/2017/02/Schedule-7-27.pdf
+
+\item \textbf{Dispreferred structures through language change}\\{\textit{International Conference of Historical Linguistics }} 23\hfill{San Antonio, 1 August 2017}\\{With St\'{e}phane Polis (Li\`{e}ge).}
+%1 August 2017
+%http://ichl23.utsa.edu/wp-content/uploads/2017/02/Schedule-7-27.pdf
+
+
+\item \textbf{The road to auxiliariness: a usage-based account}\\{\textit{3rd Usage-Based Linguistics Conference}}\hfill{Jerusalem, 3 July 2017}
+%3 July 2017
+%https://ubljlm17.wordpress.com
+
+\item \textbf{The genesis of a negative agentive nominalizer. The journey of jwtj between Old Egyptian and Coptic.}\hfill{Berlin, 21 October 2016}\\
+\textit{Die klassisch-ägyptische Sprache im Schnittpunkt von Philologie und
+Linguistik}\\
+With St\'ephane Polis.
+
+\item \textbf{Towards a diachronic typology of agentive nominalization constructions}\\{\textit{Societas Linguistica Europaea }} 49\hfill{Naples, September 2016}
+%Check date
+
+\item \textbf{A great idea, but not universal: towards a diachronic typology of agentive nominalizations}\\ 
+\textit{2nd Usage Based Linguistics Conference}\hfill{Tel Aviv, 15 June 2016}
+%15 June 2016
+%https://ubltlv2016.wordpress.com
+
+\item \textbf{Some underlying factors of semantic change: A large-scale bottom-up distributional approach}\\ 
+\textit{2nd Usage Based Linguistics Conference}\hfill{Tel Aviv, 15 June 2016}\\
+With Haim Dubossarsky and Daphna Weinshall (HUJI).
+%15 June 2016
+%https://ubltlv2016.wordpress.com
+
+\item \textbf{Noun corporation in Coptic and beyond}\\
+\textit{Crossroads V. Egyptian-Coptic linguistics in comparative perspectives}\hfill{Berlin, 18 February 2016}
+%18 February 2016
+%https://www.archaeologie.hu-berlin.de/en/aegy_anoa-en/crossroads
+
+\item \textbf{The Egyptianness of the Coptic basic vocabulary: A typological view}\\
+\textit{Crossroads V. Egyptian-Coptic linguistics in comparative perspectives}\hfill{Berlin, 18 February 2016}\\
+With St\'{e}phane Polis (Li\`{e}ge).
+%18 February 2016
+%https://www.archaeologie.hu-berlin.de/en/aegy_anoa-en/crossroads
+
+\item \textbf{Diachronic lexical semantics in Ancient Egyptian-Coptic: The `Egyptianness` of basic vocabulary in Coptic}\\\textit{Society of Biblical Literature}\hfill{Atlanta, 21 November 2015}\\With St\'{e}phane Polis (Li\`{e}ge).
+%21 November 2015
+%https://www.sbl-site.org/meetings/Congresses_ProgramBook.aspx?MeetingId=27
+
+\item \textbf{Presuppositions and language change: the grammaticalization of `finish' anteriors in Spanish and beyond}\\ \textit{Societas Linguistica Europaea} 48\hfill{Leiden, 2 September 2015}\\With Malte Rosemeyer (Freiburg).
+%check date
+
+\item \textbf{Noun phrase (?) incorporation in Coptic and beyond: a preliminary typological survey}\\\textit{Association of Linguistic Typology} 11\hfill{Albuquerque, 3 August 2015}\\ 
+%3 August 2015
+%https://ling.unm.edu/news-and-events-/alt-2015/program/conferenceschedule.pdf
+
+\item \textbf{Dispreferred structures through change: the diachrony of affix ordering}\\\textit{Verbs, verb phrases, and verbal categories}\hfill{Jerusalem, 23 March 2015}
+%https://scholars.huji.ac.il/sites/default/files/llcc/files/huji_verb_workshop.pdf
+
+
+\item \textbf{Prohibitive constructions in Later Egyptian}\\
+\textit{Negation in Ancient Egyptian}\hfill{Paris, 11 December 2014}\\With St\'ephane Polis.
+%11 December 2014
+%https://www.academia.edu/9767941/Workshop_Negation_in_Ancient_Egyptian_Paris_December_11th-13th_2014
+
+\item \textbf{Valency and transitivity in contact: the case of Coptic}\\\textit{Societas Linguistica Europaea} 47\hfill{Poznan, 13 September 2014} 
+%13 September 2014
+%http://web.archive.org/web/20160324072431/http://sle2014.eu/downloads/SLE%202014_schedule_FinalVersion_online.pdf
+
+\item \textbf{Allative-future syncretism in Malayic languages and beyond}\\\textit{Syntax of the World’s Languages} 6\hfill{Pavia, 8 September 2014}\\With David Gil (MPI Leipzig).  
+%8 September 2014
+%http://swl-6.wdfiles.com/local--files/program/Schedule%20new2.pdf
+
+\item \textbf{Adposition borrowing: a cross-linguistic perspective}\\
+\textit{Societas Linguistica Europaea} 46\hfill{Split, 20 September 2013} 
+%18-21 September 2013 - but check date
+%http://www.sle2013.eu/programme/
+
+\item \textbf{Evaluating a universal of borrowing: Linear Order Preservation}\\ \textit{Societas Linguistica Europaea} 46\hfill{Split, 21 September 2013} 
+%18-21 September 2013 - but check date
+%http://www.sle2013.eu/programme/
+
+\item \textbf{A rare case of Differential Subject Marking on S/A: the case of Coptic}\\\textit{Association of Linguistic Typology} 10\hfill{Leipzig, 15 August 2013}\\ With Giorgio Iemmolo (Z\"urich). 
+%15 August 2013
+%https://www.eva.mpg.de/lingua/conference/2013_ALT10/files/program.html
+
+\item \textbf{On the pragmatics of subjectification: the emergence and modalization of an Allative Future in Ancient Egyptian}\\ \textit{Grammaticalization and (Inter)subjectification (GRAMIS)}\hfill{Brussels, 11 November 2010}\\With St\'{e}phane Polis (Li\`{e}ge). 
+%Check date with Stef
+%Wesbite?
+
+\item \textbf{Pragmatic inferencing and the rise of the Allative Future in Egyptian}\\\textit{32nd Annual Conference 
+Deutsche Gesellschaft f\"ur Sprachwissenschaft}\hfill{Berlin, 24 February 2010}\\With St\'ephane Polis (Li\`{e}ge).
+%Check dates
+
+\item \textbf{The grammaticalization of the periphrastic perfect in Coptic: a typological perspective}\\\textit{Crossroads IV}\hfill{Basel, 22 March 2009} 
+%19-22 March 2009
+%http://wwwuser.gwdg.de/~lingaeg/lingaeg17.htm
+
+\item \textbf{Typology, dialectology, and diachrony: prohibitive constructions in the Coptic dialects}\\\textit{Language Typology and Egyptian-Coptic Linguistics}\hfill{Leipzig, 4 October, 2008}
+%4 October 2008
+%https://www.eva.mpg.de/fileadmin/content_files/linguistics/pdf/EgypCoptic_Webpage_2008.pdf
+
+\item \textbf{Nominal determination and focus in Early Bohairic}\\\textit{9th International Congress of Coptic Studies}\hfill{Cairo, 15 September 2008}\\Given in absentia.
+%14-20 September 2008 - check date
+%https://www.eva.mpg.de/fileadmin/content_files/linguistics/pdf/EgypCoptic_Webpage_2008.pdf
+
+\item \textbf{On Polotsky`s relative-clause analysis of the the Coptic Second Tenses}\\\textit{After Polotsky. New Research and Trends in Egyptian-Coptic Linguistics}\hfill{Bonn, 10 September 2005}
+%9-11 September 2005 - check date if possible
+
+\item \textbf{Worknotes on Nitrian Bohairic syntax}\\\textit{8th International Congress of Coptic Studies}\hfill{Paris, 2 July 2004} 
+%28 June - 3 July 2004
+%https://library.duke.edu/rubenstein/scriptorium/papyrus/texts/clist_congresses.html
+\end{enumerate}
+
+\begin{flushleft}\textbf{Other presentations (keynotes marked*)}
+\end{flushleft}
+\begin{enumerate}[resume]
+%\item \textbf{*The shaping of transitivity and argument structure: a view from language contact}\\
+%\textit{The shaping of transitivity and argument structure}\hfill{Pavia, 25 -- 27 October 2018}\\\textit{{Theoretical and empirical perspectives}}
+
+\item \textbf{Lexical valence orientation in cross-linguistic perspective: an overview}\\\textit{Societas Linguistica Europaea} 51\hfill{Tallinn, 31 August 2018}
+
+\item \textbf{Where do synchronic distributions come from? The view from sound borrowing}\\
+Hebrew University LingSpring\hfill{Jerusalem, 23 May 2018}\\
+With Dmitry Nikolaev (HUJI) and Steven Moran (Z\"urich).
+
+\item \textbf{*Speakers and listeners: getting to the root of language change}\\
+\textit{Ph.D. conference VL: HELSLANG: Kesäkonferenssi/ Summer Conference}\hfill{Helsinki, 6 June 2017} 
+
+\item \textbf{*Connecting the dots between typological distributions and individual speakers in language contact research}\\\textit{Contact-Driven Multilingual Practices}\hfill{Helsinki, 2 June 2017}
+
+\item \textbf{Computational accounts of semantic change}\\
+Bar-Ilan University Linguistics Colloquium\hfill{Ramat Gan, 4 April 2017}\\
+With Haim Dubossarsky (HUJI).
+%http://english.biu.ac.il/node/736
+\item \textbf{On crosslinguistic frequency and rarity in the languages of the world}\\
+Haifa University Hebrew Language Colloquium\hfill{Haifa, 16 January 2017}
+%http://hebrew-language.haifa.ac.il/index.php/he/dep-semminar/220-16-1-17
+\item \textbf{Linguistic properties in space and time}\\University of Konstanz\hfill{Singen, 28 June 2016}
+%http://buberfellows.huji.ac.il/node/338
+
+\item \textbf{*Some Questions and Challenges in (Computational) Linguistics in the 21st Century?}\\
+\textit{2016 Israel Seminar of Computational Linguistics}\hfill{Haifa, 31 May 2016}
+%http://tce.technion.ac.il/events/iscol-2016/
+
+\item \textbf{What’s universal in human languages, and how can we know?}\\Bar-Ilan University Cultural Studies Colloquium\hfill{Ramat Gan, 24 May 2016}
+
+\item \textbf{Noun phrase (?) incorporation in Coptic and beyond: A preliminary cross-linguistic study}\\
+Hebrew University Linguistics Colloquium\hfill{Jerusalem, 10 November 2015}
+%https://scholars.huji.ac.il/llcc/event/linguistics-department-seminar-eitan-grossman-linguistics-huji
+
+\item \textbf{The Egyptianness of basic vocabulary in Egyptian-Coptic: a typological perspective}\\
+\textit{DDGLC Explorations} (Freie Universit\"at)\hfill{Berlin, 26 November 2015}\\With St\'{e}phane Polis.
+
+\item \textbf{Predicate-centered focus in Coptic: A synchronic lay of the land and a diachronic puzzle}\\
+\textit{Information Structure in Ancient Egyptian}\hfill{Berlin, 24 June 2014}
+
+\item \textbf{New (and old) horizons in historical linguistics}\\\textit{{1$^{\textrm{st}}$ Usage-Based Linguistics conference}}\hfill{Jerusalem, 14 June 2015}
+
+\item \textbf{*Answering Greenberg`s Questions}\\ 
+\textit{Quo Vadis Linguistics in the 21st Century}\\
+Round-table plenary panel at \textit{Societas Linguistica Europaea} 47\hfill{Poznan, 13 September 2014}
+%11-14 September 2014
+
+\item \textbf{Evaluating a universal of borrowing: Linear Order Preservation}\\U. of Z\"urich Department of Comparative Linguistics Research Colloquium\hfill{Z\"urich, 22 May 2014}
+
+\item \textbf{Contexts and inferences: Hypotheses about pragmatics and grammaticalization.}\\
+\textit{Historical linguistics meets experimental pragmatics}\hfill{Jerusalem, 14 May 2014}\\
+With St\"ephane Polis.
+
+\item {\textbf{Case in Coptic: what’s ‘coded’?’}}\\\textit{Case and Agreement Between Grammar and Information Structure}\hfill{Jerusalem, 12 January 2014}
+%http://llacan.vjf.cnrs.fr/fichiers/Danielle/1/workshop_lemmolo.pdf
+
+\item \textbf{Weird nominativity: Differential Subject Marking in Coptic}\\Hebrew University Linguistics Colloquium\hfill{Jerusalem, 26 November 2013}
+
+\item \textbf{Towards a typology of antiapplicatives, or: what are antipassives doing in accusative languages?}\\
+Hebrew University Linguistics Colloquium\hfill{Jerusalem, 7 May 2013}
+
+\item \textbf{The Coptic verb in light of grammaticalization}\\
+\textit{A workshop in honor of Ariel Shisha-Halevy}\hfill{Jerusalem, 29 May 2012}\\
+
+\item \textbf{`So you just flow with it`: pronominal choice in soldiers` testimonies}\\
+\textit{Meditations on authority}\hfill{Jerusalem, 3 May 2011}
+
+\item \textbf{Cycling to the future without a verb}\\
+Martin Buber Society Colloquium\hfill{Jerusalem, 1 November 2011}
+%http://buberfellows.huji.ac.il/node/155
+
+\item \textbf{What (else) are comparative concepts and descriptive categories good for?}\\
+\textit{DDGLC Explorations}\hfill{Leipzig, 19 October 2011}
+
+\item \textbf{A functional perspective on control and raising}\\ \textit{New directions in Egyptian syntax}\hfill{Li\`{e}ge, 12 May 2011}
+%12-14 May 2011
+%http://www.egypto.ulg.ac.be/a4.htm
+
+\item \textbf{*Scribes as agents of destandardization}\\\textit{Scribes as agents of language change}\hfill{Cambridge, 4 April 2011}\\
+%4-6 April 2011
+%http://hison.sbg.ac.at/content/conferences/ScribesCallforPapers.pdf
+
+\item \textbf{Thoughts on subjectivity in language: re-examining the role of the addressee in language change}\\
+Haifa University English Department Colloquium\hfill{Haifa, 2 March 2011}
+
+\item \textbf{Beyond free variation: Scribal repertoires from Old Kingdom to Early Islamic Egypt}\\\textit{Beyond Free Variation}\hfill{Oxford, 14 September 2010}
+%14-16 September 2010
+%http://papyrology.blogspot.com/2009/06/conference-beyond-free-variation.html
+
+\item \textbf{Grammatical variation and language change: the case of Greek verb lexemes in the Coptic dialects}\\
+\textit{Beyond Free Variation}\hfill{Oxford, 14 September 2010}
+%14-16 September 2010
+%http://papyrology.blogspot.com/2009/06/conference-beyond-free-variation.html
+
+\item \textbf{Functional and non-functional motivations for the emergence of proleptic constructions}\\\textit{Linguistic approaches to prolepsis}\hfill{Li\`{e}ge, 1 June 2010}\\With St\'{e}phane Polis. 
+
+
+\item \textbf{Towards a typology of adposition borrowing: Greek-origin prepositions in Coptic}\\\textit{Linguistic Borrowing in Coptic}\hfill{Leipzig, 27 April 2010} 
+%26 -- 28 April 2010
+%https://www.saw-leipzig.de/de/aktuelles/linguistic-borrowing-into-coptic
+
+\item \textbf{*What’s integrated into what (and by whom)?}\\
+\textit{Identifying and Describing Lexical Borrowing}\hfill{Li\`{e}ge, 18 March 2010}\\With St\'{e}phane Polis (Li\`{e}ge).
+
+\item \textbf{How to get to the future without a verb of motion (or metaphors)}\\Homboldt University\hfill{Berlin, 23 February 2010}\\
+With St\'{e}phane Polis (Li\`{e}ge).
+
+\item \textbf{Navigating polyfunctionality in the lexicon with a semantic map}\\
+\textit{Lexical Semantics in Ancient Egyptian}\hfill{Li\`{e}ge, 10 December 2009}\\With St\'{e}phane Polis (Li\`{e}ge).
+
+%\item \textbf{The idiolect of a Sahidic author}\\\textit{Shenoute Workshop}\hfill{Monserrat, 2006}
+
+\item \textbf{Innovation and repertoire: the case of Late Egyptian}\\ \textit{Kulturkontakt und Innovation}\hfill{Vienna, 5 June 2003}
+%4-8 June 2003
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%
+\resheading{Conferences and workshops organized} \pdfbookmark{Conferences and workshops organized}{sec:Organized}
+%%%%%%%%%%%%%%%
+\begin{enumerate}
+\vspace{-0.025 in}
+\vspace*{-8pt}
+\item \textbf{Valence orientation in contact: a cross-linguistic perspective}\\Workshop at SLE 51\hfill{Tallin, 31 August -- 1 Sept. 2018}\\
+Organized with Johanna Nichols (Berkeley) \& Riho Gr\"unthal (Helsinki)
+
+\item \textbf{3$^{\textrm{rd}}$ Usage-Based Linguistics conference}\hfill{Jerusalem, 3 -- 5 July 2017}\\Organized with Inbal Arnon (HUJI), Elitzur Bar-Asher Siegal (HUJI), and Mira Ariel (TAU)\\
+
+\item \textbf{International Summer School on Typology and Lexis}\hfill{Moscow, 2 -- 8 September 2017}\\
+Jointly organized, HUJI, Moscow Higher School of Economics, and University of Stockholm.
+
+\item \textbf{2$^{\textrm{nd}}$ Usage-Based linguistics conference}\hfill{Tel Aviv, 15 -- 16 June 2016}\\Organized with Inbal Arnon (HUJI), Elitzur Bar-Asher Siegal (HUJI), and Mira Ariel (TAU).
+%https://ubltlv2016.wordpress.com
+
+\item \textbf{The diachrony of nominalizations and nominalizers}\hfill{Mexico City, 20 August 2016}\\
+{Workshop at \textit{Syntax of the World’s Languages}}\\ 
+Organized with Sonia Cristofaro (Pavia).
+%http://swl-7.weebly.com/workshops.html
+
+\item \textbf{Verbs, verb phrases, and verbal categories}\hfill{Jerusalem, 23 -- 24 March 2015}\\
+Organized with Lea Sawicki (HUJI),  Vladimir Plungian (MSU Moscow) and Ekaterina Rakhilina (HSE Moscow).
+%https://scholars.huji.ac.il/sites/default/files/llcc/files/huji_verb_workshop.pdf
+
+\item \textbf{1$^{\textrm{st}}$ Usage-Based Linguistics conference}\hfill{Jerusalem, 14 June 2015}\\
+Organized with Inbal Arnon (HUJI), Elitzur Bar-Asher Siegal (HUJI), and Mira Ariel (TAU).
+
+\item \textbf{Valency and transitivity in contact: a cross-linguistic perspective}\\Workshop at the \textit{Societas Linguistica Europaea} 47\hfill{Poznan, 13-14 September 2014}\\
+Organized with Susanne Michaelis (MPI for Evolutionary Anthropology, Leipzig).
+
+\item \textbf{Experimental pragmatics and language change}\hfill{Jerusalem, 14 -- 16 May 2014}\\Organized with Ira Noveck (CNRS Lyon). 
+
+\item \textbf{Possession in Ancient Egyptian-Coptic}\hfill{Li\`{e}ge, 6 -- 8 February 2014}\\Organized with St\'{e}phane Polis (Li\`ege). 
+
+\item \textbf{Case and agreement between grammar \& information structure}\\Organized with Giorgio Iemmolo (Z\"{u}rich)\hfill{Jerusalem, 12 January 2014}
+
+
+\item \textbf{The typology of adposition borrowing}\hfill{Split, 20 -- 21 September 2013}\\Workshop at the \textit{Societas Linguistica Europaea} 46.\\ Organized with Giorgio Iemmolo (Z\"{u}rich), St\'{e}phane Polis (Li\`ege), and Petros Karatsareas (Westminster). 
+
+\item \textbf{A workshop in honor of Ariel Shisha-Halevy}\hfill{Jerusalem, 29 May 2012}\\
+Organized with Eran Cohen (HUJI) and Michal Marmorstein (HUJI).
+
+\item \textbf{Repetition: an interdisciplinary workshop}\hfill{Jerusalem, 15 January 2012}\\
+Organized with Roy Wagner, Uri Gabbay, and Sibylle Schmidt (Martin Buber Society, HUJI)
+%http://buberfellows.huji.ac.il/Academic_Activities/2011-2012
+
+\item \textbf{Linguistic perspectives on prolepsis}\hfill{Li\`{e}ge, 1-2 June 2010}\\Organized with Hilla Halla-Aho (Helsinki) and Dominique Longrée (Li\`{e}ge). 
+%https://www.uliege.be/cms/c_468705/fr/workshop-international-linguistic-perspectives-on-prolepsis
+
+\item \textbf{New directions in Egyptian syntax}\hfill{Li\`{e}ge, 12 -- 14 May 2011}\\Organized with St\'{e}phane Polis and Jean Winand (Li\`ege). 
+
+\item \textbf{Scribes as agents of language change: Historical-sociolinguistic approaches to text languages.}\hfill{ Cambridge, 4 -- 6 April 2011}\\Organized with Esther-Miriam Wagner (Cambridge).
+
+\item \textbf{Beyond free variation: Scribal repertoires from Old Kingdom to Early Islamic Egypt}\\
+Organized with with Jennifer Cromwell (Oxford)\hfill{Oxford, 14 -- 15 September 2010}
+
+\item \textbf{Linguistic borrowing into Coptic}\hfill{Leipzig, 26 -- 28 April 2010}\\ Max Plank Institute for Evolutionary Anthropology and the Hebrew University\\Organized with Tonio Sebastian Richter (Leipzig) and Martin Haspelmath (MPI Leipzig). 
+
+\item \textbf{Identifying and describing lexical borrowing}\hfill{Li\`{e}ge, 18 -- 20 March 2010}\\Organized with Esther Baiwir and St\'{e}phane Polis (Li\`ege).
+%https://linguistlist.org/issues/20/20-3207.html
+
+\item \textbf{Lexical semantics in Ancient Egyptian}\hfill {Li\`{e}ge, 10-12 December 2009}\\Organized with St\'{e}phane Polis and Jean Winand (Li\`{e}ge).
+%
+\item \textbf{Linguistics section}\\
+\textit{9th International Congress of Coptic Studies}\hfill{Cairo, 15 December 2008}\\Organized with Ariel Shisha-Halevy (HUJI).
+\end{enumerate}
+
+
+\newpage
+%%%%%%%%%%%%%%%
+\resheading{Teaching} \pdfbookmark{Teaching}{sec:teaching}
+%%%%%%%%%%%%%%%
+\begin{itemize}
+\vspace{-0.025 in}
+\vspace*{-4pt}
+
+\item \textbf{Introduction to Linguistics (10801)}\hfill{Hebrew University}\\{BA lecture}\hfill{2012 -- 2018}\\Co-taught with Nora Boneh, Noam Faust 
+
+\item \textbf{Introduction to Historical Linguistics}\hfill{Hebrew University}\\{BA lecture}\hfill{2013 -- 2018}
+
+\item \textbf{Historical Syntax}\hfill{Hebrew University}\\{BA seminar}\hfill{2012 -- 2013}
+
+\item \textbf{Speakers and Listeners: Theories of Sound Change}\hfill{Hebrew University}\\{BA seminar}\hfill{2013 -- 2014}
+	
+\item \textbf{Typological Syntax}\hfill{Hebrew University}\\{BA seminar}\hfill{2015 -- 2016}
+	
+\item \textbf{The Structure of Coptic}\hfill{Hebrew University}\\{BA lecture}\hfill{2013 -- 2013, 2014 -- 2015, 2016 -- 2017}
+
+\item \textbf{Topics in Coptic Grammar}\hfill{Hebrew University}\\{BA seminar}\hfill{2014 -- 2015, 2015 -- 2016, 2016 -- 2018}
+
+\item \textbf{The Structure of Middle Egyptian}\hfill{Hebrew University}\\{BA lecture}\hfill{2012 -- 2013}
+
+\item \textbf{Historical Grammar of Egyptian-Coptic}\hfill{Hebrew University}\\{BA seminar}\hfill{2013 -- 2014}
+	
+\item \textbf{Linguistic Typology}\hfill{Hebrew University}\\{MA seminar}\hfill{2012 -- 2017}
+	
+\item \textbf{Languages in Contact: A Typological Perspective}\hfill {Hebrew University}\\{MA seminar}\hfill{2014 -- 2015}
+
+\item \textbf{Topics in Contemporary Linguistics: Inter-track Seminar}\hfill{Hebrew University}\\{MA seminar}\hfill{2014 -- 2015}\\Co-taught with Malka Rappaport Hovav.
+	
+\item \textbf{Research seminar for MA students}\hfill{Hebrew University}\\{MA seminar}\hfill{2013-2014, 2014-2015}
+	
+\item \textbf{{Issues in Linguistic Typology}}\hfill{Hebrew University}\\{MA seminar}\hfill{2016 -- 2017}
+	
+\item \textbf{Phonological Typology}\hfill{Hebrew University}\\{MA seminar}\hfill{2018 -- 2019}
+	
+\item \textbf{Language Contact and Areal Linguistics}\hfill{Hebrew University}\\{MA seminar}\hfill{2018 -- 2019}
+\end{itemize}
+
+\begin{flushleft}
+\textbf{Mini-courses developed and coordinated}
+\end{flushleft}
+\begin{itemize}
+    \item {Language contact: theory and case studies}\hfill{2014-2015}\\Yaron Matras (University of Manchester)
+\item {Language Documentation and Linguistic Fieldwork: Theory Meets Practice}\hfill{2015-2016}\\Taught by teachers from abroad, co-coordinated with other linguists from the faculty and from Scholion
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%
+\resheading{Languages} \pdfbookmark{Languages}{sec:langs}
+%%%%%%%%%%%%%%%
+
+\raggedright
+English (native), Hebrew (near-native), Spanish (good), French (good), German (basic)\\
+Reading/structural knowledge of Amharic, Ancient Egyptian (all stages), Aramaic, Coptic, Ge`ez, Greek (classical and post-classical), Irish, Latin, Welsh (modern and medieval).
+
+
+\end{document}

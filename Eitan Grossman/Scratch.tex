@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{multirow}
+
+\begin{document}
+
+\begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\vspace{10pt}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l| l| l| l|}
+\hline \hline
+Who & Name & Role & Eyes & Hair\\
+\hline \hline
+\multirow{2}{5em}{Parents} & Eitan & dad & blue & brown\\
+& Rona & mom & brown & brown\\
+\hline
+\multirow{2}{5em}{Parents} & Elai & son & gray & light brown\\
+& Ruth & daughter & green & light brown\\
+\hline 
+\end{tabular}
+\caption{Table to test captions and labels}
+\label{table:1}
+\end{table}
+\vspace{20}
+
+\begin{tabular}{l l l l }
+1. & Haim Dubossarsky & ELSC & 2018\\
+& \textit{Computation studies in semantic change}&&\\
+& Co-supervisor: Daphna Weinshall (HUJI, Computer Science}&&\\
+2. & Rammie Cahlon & Linguistics & Current\\
+& {Co-supervisor: Willem Adelaar (University of Leiden}&&&\\
+\hline 
+\end{tabular}
+\end{document}

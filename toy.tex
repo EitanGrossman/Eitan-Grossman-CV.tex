@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{listings}
+\lstset{% general command to set parameter(s)
+basicstyle=\small, % print whole listing small
+%keywordstyle=\color{black}\bfseries\underbar,
+% underlined bold black keywords
+%identifierstyle=, % nothing happens
+%commentstyle=\color{white}, % white comments
+%stringstyle=\ttfamily, % typewriter type for strings
+%showstringspaces=false,
+language={},
+frame={single},
+backgroundcolor=\color{yellow!30!}
+} % no special string spaces
+
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+
+\usepackage{hyperref}
+
+
+\author{Todd \&~Eitan}
+\title{Learning \LaTeX{} \&~Bibliographies}
+
+\begin{document}
+
+\maketitle
+
+\section*{What we're using}
+\begin{enumerate}
+    \item A simple article class document
+        \begin{lstlisting}
+        \documentclass{article}
+        \end{lstlisting}
+    This begins the \texttt{.tex} document.
+    \item The package \texttt{natbib}
+        \begin{lstlisting}
+        \usepackage{natbib}
+        \end{lstlisting}
+    This goes in your preamble, where you call packages and define terms.
+    \item One of the bibliography styles which comes with \texttt{natbib}
+        \begin{lstlisting}
+        \bibliographystyle{plainnat}
+        \end{lstlisting}
+    This goes wherever, though usually right next to the following command...
+    \item Your starter \texttt{Bibliography.bib} file
+        \begin{lstlisting}
+        \bibliography{Bibliography.bib}
+        \end{lstlisting}
+    This goes where you want the bibliography to be printed.
+\end{enumerate}
+
+\section*{How to build your \texttt{.bib} file}
+\begin{itemize}
+    \item Each entry starts with @$\langle$\textit{type}$\rangle$
+        \subitem Common types include \textit{article}, \textit{book}, \textit{incollection}, \textit{inproceedings}\textellipsis
+    \item Immediately after the type is the key, followed by a comma
+        \subitem This is the label you will use to cite this entry
+            \begin{lstlisting}
+            @phdthesis{snider-2017,
+            \end{lstlisting}
+        \subitem Note that the bracket isn't closed until the end of the entry.
+    \item Then come the fields
+    \begin{itemize}
+        \item Each entry type has a set of mandatory fields
+        \item Each entry type has some optional fields
+        \item You can see which is which here:\\ \url{https://en.wikipedia.org/wiki/BibTeX#Entry_types}
+    \end{itemize}
+    \item Each field has a name, equals, and then its argument (enclosed in curly brackets or quotation marks)\footnote{I strongly recommend brackets over quotation marks. As you get more and more comfortable with \LaTeX, you'll start to differentiate ` and `` from ' and '', and it seeps...}
+    \begin{lstlisting}
+        year = {2014},
+    \end{lstlisting}
+        \subitem Every non-final field line has to end in a comma.
+\end{itemize}
+
+\section*{How to cite}
+
+The simplest citation is just \texttt{\textbackslash cite}. You can generate\\
+\cite{ALH2014}\\
+by typing the following:
+\begin{lstlisting}
+    \cite{ALH2014}
+\end{lstlisting}
+
+\vspace{\baselineskip}
+\noindent There are other ways, as well. Here is a comparison:\\[12pt]
+\begin{tabular}{l l }
+\textbackslash \texttt{citet}$\{\textit{key}\}$ & 	Jones et al. (1990) \\
+\textbackslash \texttt{citet*}$\{\textit{key}\}$ & 	Jones, Baker, and Smith (1990) \\
+\textbackslash \texttt{citep}$\{\textit{key}\}$	& (Jones et al. 1990) \\
+\textbackslash \texttt{citep*}$\{\textit{key}\}$ & 	(Jones, Baker, and Smith 1990) \\
+\textbackslash \texttt{citep[p.~99]}$\{\textit{key}\}$ & 	(Jones et al., 1990, p. 99) \\
+\textbackslash \texttt{citep[e.g.][]}$\{\textit{key}\}$ & 	(e.g. Jones et al., 1990) \\
+\textbackslash \texttt{citep[e.g.][p.~99]}$\{\textit{key}\}$ & 	(e.g. Jones et al., 1990, p. 99) \\
+\textbackslash \texttt{citeauthor}$\{\textit{key}\}$ &	Jones et al. \\
+\textbackslash \texttt{citeauthor*}$\{\textit{key}\}$ &	Jones, Baker, and Smith \\
+\textbackslash \texttt{citeyear}$\{\textit{key}\}$ &	1990 \\
+\textbackslash \texttt{citeapos}$\{\textit{key}\}$\texttt{*} &	Jones et al.'s (1990)
+\end{tabular}
+\vspace{\baselineskip}
+
+*Assumes \textbackslash citeapos is defined in your style or document like this:
+\begin{lstlisting}
+    \def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\end{lstlisting}
+
+\noindent
+You can change whether these show up in parentheses or square brackets, with numbers or names, etc., by either
+\begin{itemize}
+    \item changing the bibliography style, or
+    \item using a custom \texttt{\textbackslash bibpunct} command, e.g.:
+    \begin{lstlisting}
+        \bibpunct{[}{]}{,}{a}{}{;}
+    \end{lstlisting}
+\end{itemize}
+
+\noindent Changing the bibliography style also changes how the reference list is formatted.
+
+\bibliographystyle{plainnat}
+\bibliography{Bibliography.bib}
+
+\end{document}

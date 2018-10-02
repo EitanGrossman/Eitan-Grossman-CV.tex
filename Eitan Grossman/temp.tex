@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{mybibliography.bib}
+%tns: First off, you're using biber here, not bibtex, which is an added level of difficulty... but not insurmountable
+%tns: Second, note the filename in line 8 that you're calling: "myibliography.bib"
+%tns:       Compare that filename to the name of the only .bib file in this project: "Bibliography.bib"
+%tns:       They don't match, so of course it's looking for a file that doesn't exist
+%tns: Third, you don't actually have a command in here to print a bibliography (usually at the end of a file): you need \printbibliography if you're using biber
+%tns: Fourth, why do you have a bibliography in a CV? (lists of publications are usually different from bibliographies, no? though it's an interesting idea...)
+
+%EG - OH hey, this is just a scratch file, take a look at Eitan Grossman CV, I thought that that was what I was sharing with you...
+%EG - Can you see that?
+
+
+\title{Eitan Grossman CV}
+\author{eitan.grossman }
+%tns: Are you going with a new artistic name format thing, e.e. cummings-style?
+\date{September 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Personal details}
+\begin{itemize}
+    \item Date of Birth 		18.4.1975
+%tns: Note that hitting 'tab' isn't going to insert spaces in a .tex file. If you want to just manually add space on the same line, you want \hspace (the h is for horizontal). Or you might consider making this whole thing a table, so the columns align...
+    \item Country of Birth	    USA
+    
+\cite{ALH2014}
+
+\end{itemize}
+
+\section{Education}
+\section{Appointments}
+
+
+Words go here.
+\cite{LV2015}
+
+\end{document}
+
